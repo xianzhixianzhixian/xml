@@ -1,0 +1,61 @@
+/**
+ * 作者：樊钰丰
+ * 时间：2017.7.13
+ * 功能：SAX技术XML学生管理系统
+ */
+
+package com.stumanager.view;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class StuManager {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		StudentService studentService=new StudentService();
+		
+		//显示操作界面
+		System.out.println("查看所有学生成绩：view");
+		System.out.println("按照学生id号码查询学生成绩：view of");
+		System.out.println("退出系统：exit");
+		
+		//获取用户希望干什么
+		String operType=sc.nextLine();
+		if(operType.equals("view")){
+			
+			studentService.showStudentsGrade();
+			
+		}else if(operType.equals("view of")){
+			
+		}else if(operType.equals("exit")){
+			
+			System.exit(0);
+		}
+		
+	}
+
+}
+
+class Student{
+	
+	private String stuid;
+	private String stuname;
+	private double java; //java成绩
+	private double oracle; //oracle成绩
+	private int c; //C语言成绩
+	
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<students> 
+  <student id="002"> 
+    <name>小红</name>  
+    <course> 
+      <java>100.0</java>  
+      <oracle>100.0</oracle>  
+      <vb>100.0</vb> 
+    </course> 
+  </student>  
+  <student id="003"> 
+    <name>樊钰丰</name>  
+    <course> 
+      <java>100.0</java>  
+      <oracle>100.0</oracle>  
+      <vb>100.0</vb> 
+    </course> 
+  </student> 
+</students>

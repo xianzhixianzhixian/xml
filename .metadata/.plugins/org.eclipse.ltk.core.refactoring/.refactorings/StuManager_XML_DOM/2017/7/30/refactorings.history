@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;stu.xml&apos; to &apos;StuManager_XML_DOM4J_XPATH/src&apos;&#x0D;&#x0A;- Original project: &apos;StuManager_XML_DOM&apos;&#x0D;&#x0A;- Destination element: &apos;StuManager_XML_DOM4J_XPATH/src&apos;&#x0D;&#x0A;- Original element: &apos;stu.xml&apos;" description="Copy file" destination="=StuManager_XML_DOM4J_XPATH/src" element1="src/stu.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1500975040438" units="0" version="1.0"/>
+</session>

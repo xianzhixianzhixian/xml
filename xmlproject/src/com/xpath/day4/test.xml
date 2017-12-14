@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AAA>
+	<BBB>
+		<CCC>
+			<KKK>k2</KKK>
+		</CCC>
+		<CCC>
+			<KKK>k1</KKK>
+		</CCC>
+	</BBB>
+	<BBB id="id1">b1</BBB>
+	<BBB id="id2">b2</BBB>
+	<XXX>
+		<BBB/>
+		<CCC/>
+		<BBB/>
+		<BBB/>
+		<DDD>
+			<BBB>hello</BBB>
+		</DDD>
+	</XXX>
+		<CCC>
+			<DDD>
+				<BBB/>
+				<BBB/>
+				<EEE/>
+				<FFF/>
+			</DDD>
+		</CCC>
+	<BBB name="bbb">b3</BBB>
+	<BBB>b4</BBB>
+	</AAA>

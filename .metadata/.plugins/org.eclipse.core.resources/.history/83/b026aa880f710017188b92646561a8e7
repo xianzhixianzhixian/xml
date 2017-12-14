@@ -1,0 +1,41 @@
+/**
+ * 作者：樊钰丰
+ * 时间：2017.7.25
+ * 功能：DOM4J+Java Reflection小练习
+ */
+
+package com.dom4j.test;
+
+import java.io.File;
+
+import org.dom4j.*;
+import org.dom4j.io.*;
+
+@SuppressWarnings("unused")
+public class DOM4J {
+	
+	private String name,method,parameter_type,parameter_value;
+	private SAXReader saxReader;
+	private Document document;
+	
+	public static void main(String[] args) throws Exception{
+		
+		DOM4J dom4j=new DOM4J();
+	}
+	
+	public DOM4J() throws Exception{
+		
+		saxReader=new SAXReader();
+		document=saxReader.read(new File("program.xml"));
+	}
+	
+	public void readParameters(){
+		
+		//DOM4J不能跨层取
+		Element root=document.getRootElement();
+		Element classA=root.element("class");
+		Element className=classA.element("name");
+		name=className.getText();
+		
+	}
+}

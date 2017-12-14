@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student stuid="001">
+		<name>小明</name>
+		<course>
+			<java>90</java>
+			<oracle>90</oracle>
+			<c>89</c>
+		</course>
+	</student>
+	<student stuid="002">
+		<name>小王</name>
+		<course>
+			<java>90</java>
+			<oracle>90</oracle>
+			<c>89</c>
+		</course>
+	</student>
+	<student stuid="003">
+		<name>小李</name>
+		<course>
+			<java>90</java>
+			<oracle>90</oracle>
+			<c>89</c>
+		</course>
+	</student>
+</students>

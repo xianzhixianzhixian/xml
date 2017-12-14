@@ -1,0 +1,94 @@
+package com.stuManager.dao;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
+
+import com.stuManager.bean.Student;
+
+public class StuDao {
+
+	
+	private static SAXReader saxReader;
+	private static Document document;
+	
+	static{
+		
+		try {
+			
+			saxReader=new SAXReader();
+			document=saxReader.read(new File("./src/stu.xml"));
+		
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new RuntimeException(e.getMessage());
+		}
+	}
+	
+	public static ArrayList<Student> getAllStudent(){
+		
+		ArrayList<Student> list=new ArrayList<Student>();
+		
+		//"/students/student"表示找出所有students下的student元素
+		//"//student"表示找出所有的student元素
+		List<Element> nodeList=document.selectNodes("//student");
+		
+		for(int i=0;i<nodeList.size();i++){
+			
+			Student temp=new Student();
+			
+			Element stu=nodeList.get(i);
+			Element stu_name= (Element) stu.element("name");
+			Element course=(Element) stu.element("course");
+			Element stu_java= (Element) course.element("java");
+			Element stu_oracle=(Element) course.element("oracle");
+			Element stu_vb=(Element) course.element("vb");
+			
+			temp.setId(stu.attributeValue("id"));
+			temp.setName(stu_name.getText());
+			temp.setJava(Double.parseDouble(stu_java.getText()));
+			temp.setOracle(Double.parseDouble(stu_oracle.getText()));
+			temp.setVb(Double.parseDouble(stu_vb.getText()));
+			
+			//将学生加入list
+			list.add(temp);
+		}
+		
+		return list;
+	}
+	
+	//获得单个学生的信息
+	public static Student getStudentById(String id){
+		
+		Student temp = new Student();
+		
+		Element stu=(Element) document.selectNodes("//student[@id="+id+"]").get(0);
+		Element stu_name= (Element) stu.element("name");
+		Element course=(Element) stu.element("course");
+		Element stu_java= (Element) course.element("java");
+		Element stu_oracle=(Element) course.element("oracle");
+		Element stu_vb=(Element) course.element("vb");
+		
+		temp.setId(stu.attributeValue("id"));
+		temp.setName(stu_name.getText());
+		temp.setJava(Double.parseDouble(stu_java.getText()));
+		temp.setOracle(Double.parseDouble(stu_oracle.getText()));
+		temp.setVb(Double.parseDouble(stu_vb.getText()));
+		
+		return temp;
+	}
+	
+	public static void writeIntoFile(){
+		
+		//解决乱码
+		OutputFormat outputFormat=new OutputFormat();
+		
+		XMLWriter xmlWriter
+	}
+}
